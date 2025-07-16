@@ -15,7 +15,7 @@ type ValueWaiter[T comparable] struct {
 	v T
 }
 
-// NewValueWaiter creates a new ValueWaiter with an initial value.
+// New creates a new ValueWaiter with an initial value.
 func New[T comparable](initial T) *ValueWaiter[T] {
 	return &ValueWaiter[T]{
 		c: &sync.Cond{L: &sync.Mutex{}},
